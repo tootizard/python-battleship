@@ -141,7 +141,7 @@ while True:
             # We need them in y,x pairs so I had to change the order.
             attack_coord = [temp, ord(user_input[0].lower()) - 96]
             # Prevent repeat attacks.
-            if attack_coord in enemy_board.hit_list:
+            if attack_coord in enemy_board.hit_list or attack_coord in enemy_board.miss_list:
                 print("You already attacked there! Try another location.")
                 continue
             break
@@ -200,11 +200,8 @@ while True:
         helpers.render_map(enemy_board, my_board, "You won! You have defeated your peer!")
         break
 
-# Game over message only appears on the losers map. The winner sees a "peer disconnect".
 # Improvements
 #  Sinks reported on attacking side but symbol doesn't change to '*'.
 #   Message about what ship sank
-#  Update message with the last-attacked position.
-#  Prevent attacks at the same location.
-#  Play again option after game over.
-#  Secure the win/loss screen (may be affected by timing delays).
+#  Update message with the last-attacked position - Denied, would require ugly code.
+#  Play again option after game over?
