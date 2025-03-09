@@ -1,0 +1,15 @@
+Board:
+--------------------------------------
+Variables:
+    min_x, min_y, max_x, max_y: int to check oob with ship coords.
+    fleet: List of user's ships.
+    hit_list: list of coordinates that have been attacked.
+    
+--------------------------------------
+Functions:
+    init(fleet): set up hit_list with the passed fleet.
+    check_oob(ship): ensure ship is within board boundaries. return bool
+    check_collision(ship): ensure no ships cover same coordinates. ret bool
+    attack(coord): Append coord to hit_list.
+    get_attacks(): Return full hit_list.
+    get_last_attack(): Return most recent coord from hit_list.

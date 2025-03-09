@@ -1,0 +1,18 @@
+Ship:
+--------------------------------------
+Variables:
+    size: integer size/length of ship.
+    symbol: A single character. Represent the ship on your board.
+
+    is_sunk: boolean flag indicating sunk status.
+
+    position_list: List of lists of [x coord, y coord, damaged bool]. List length must match size variable. Also indicates the ship is placed on the board.
+--------------------------------------
+Functions:
+    Initiator(size, symbol): Set the size and symbol per inputs and initialize is_sunk to False, position_list and damaged_posistions to empty
+
+    set_positions(coordinate pair, direction): Fill position_list up to length of size with passed coordinate pair and coordinates per cell in direction.
+    get_positions(): Return list of coord pairs from position_list without damaged indicator.
+    reset_positions(): Empty position_list, to be used by external ship placement logic to prevent OOB and collisions.
+        Replaced by set_position logic. Set position now reset.
+    damage_ship(coordinate pair): Look through position_list for the passed coord, setting damaged bool if matched. Setis_sunk to True if all positions are damaged. Return True on damage, otherwise false.

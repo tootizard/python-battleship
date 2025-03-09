@@ -1,0 +1,50 @@
+Board concept revision 2 - 12/17/24
+    Stretch horizontal
+    Add legend
+    Add stat panes
+=================  Enemy Board ==================
+      A   B   C   D   E   F   G   H   I   J
+    + - + - + - + - + - + - + - + - + - + - +          ===== Message ==========
+ 1  |   | O |   |   |   |   |   |   |   |   |           Examples: Your turn. Enemy's turn. Place ships.
+    + - + - + - + - + - + - + - + - + - + - +                Bad ship placement - try again!
+ 2  |   |   | O | X |   |   |   |   |   |   |                Invalid move! Enemy disconnected!
+    + - + - + - + - + - + - + - + - + - + - +
+ 3  |   |   |   | X | O |   |   |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 4  |   |   |   | X |   | O |   |   | O |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 5  |   |   |   |   |   |   |   |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 6  |   |   | O |   |   | O |   |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 7  |   |   |   |   |   |   |   |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 8  |   | O |   |   |   | * | * | * | * |   |          ===== Enemy Status =====
+    + - + - + - + - + - + - + - + - + - + - +           * Destroyer
+ 9  |   |   |   | * |   |   |   | O |   |   |             Submarine
+    + - + - + - + - + - + - + - + - + - + - +             Cruiser
+10  |   |   |   | * |   |   |   |   |   |   |           * Battleship
+    + - + - + - + - + - + - + - + - + - + - +             Aircraft Carrier
+=================  Your Board ===================
+      A   B   C   D   E   F   G   H   I   J
+    + - + - + - + - + - + - + - + - + - + - +          ===== Your Status =====
+ 1  |   |   | X |   |   |   |   |   |   | O |             Destroyer
+    + - + - + - + - + - + - + - + - + - + - +             Submarine
+ 2  |   |   | D |   | O |   |   |   |   |   |             Cruiser
+    + - + - + - + - + - + - + - + - + - + - +             Battleship
+ 3  |   |   |   |   |   | O |   |   |   |   |           * Aircraft Carrier
+    + - + - + - + - + - + - + - + - + - + - +
+ 4  |   |   |   | S | S | S | O |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 5  |   |   |   | O |   |   |   | O |   |   |
+    + - + - + - + - + - + - + - + - + - + - +
+ 6  | * | * | * | * | * | B |   |   |   |   |          ====== Legend ========
+    + - + - + - + - + - + - + - + - + - + - +           O - Miss
+ 7  |   |   |   |   | C | B |   |   |   |   |           X - Hit
+    + - + - + - + - + - + - + - + - + - + - +           * - Sunk ship
+ 8  |   |   |   |   | C | B |   |   |   |   |
+    + - + - + - + - + - + - + - + - + - + - +           D - Destroyer
+ 9  |   |   |   |   | C | B |   |   |   |   |           S - Submarine
+    + - + - + - + - + - + - + - + - + - + - +           C - Cruiser
+10  |   |   |   |   |   |   |   |   |   |   |           B - Battleship
+    + - + - + - + - + - + - + - + - + - + - +           A - Aircraft Carrier

@@ -1,0 +1,106 @@
+Overview:
+    Made in python
+    Battleship game
+        2-player
+            Internet multiplayer*
+            Single board.
+
+Map:
+    10x10 square grid.
+    No fun shapes.
+    Just like the real game - no rocks or boundaries.
+
+Objects:
+    Ships
+        2 cell - destroyer
+        2 x 3 cell - submarine, cruiser
+        4 cell - battleship
+        5 cell - aircraft carrier
+    Boards
+        If ships stored on host, we need two "board" objects to keep each player separate.
+        Place ships
+            Ensure no collision/overlap
+        Hold the user's fleet
+            An instance of each ship.
+            This could be a list.
+        Store prior attacks.
+
+
+Gameplay mods:
+    1 custom/"draw own" ship.
+        Must be connected - no diagonals.
+        Size limit 10 cells - multi-row is fine
+            Maybe adjust shot counts for user.
+        ? - mod ship symbol
+    wind
+        moves your shot based on direction and speed.
+    More than two-player mode?
+    
+
+User Interface:
+    Text Interface:
+        Menu:
+            Host or Join?
+                text input - H or J.
+            Host option
+                Present your public IP address and port.
+                Cancel/back
+                Start game
+                    Just start after connected.
+            Join option
+                Text input - IP address and port
+                Connect button.
+                cancel/back
+        In-Game:
+            Place your ships message.
+                User enters the symbol for the ship.
+                Enter the starting cell (A1, G14, etc).
+                Enter the direction the ship should go.
+                Accomodate boundaries and collisions
+                    No bottom-right placement facing right, etc.
+                    No placing on other ships.
+                    Notify user that position is no good.
+                Redo/undo option to replace the ship.
+                    Any repeats of symbol and position placements apply immediately.
+                Ready button.
+                    Starts game after both are ready.
+            Game actually starts.
+                Player sees their ships and they see their "attack grid"
+                Players turn
+                    Your turn message.
+                    Text input cell to attack.
+                    Feedback applies to your attack grid.
+                Awaiting turn.
+                    Other's turn message.
+                    Feedback applies to your ship grid.
+            Game ends:
+                Winner sees the win screen.
+                Loser gets loss message (or system32 deleted)
+                Play again button?
+                    Game starts on both pressing.
+            Player left:
+                At any time the other player disconnects.
+                Inform the user so.
+                OK button
+                    Return to menu.
+                
+        Map Symbols:
+            O - miss
+            X - hit
+            * - destroyed
+            d - destroyer
+            s - submarine
+            c - cruiser
+            b - battleship
+            a - aircraft carrier
+            Can use the following for grid:
+                "Box drawings" characters
+                or
+                +-+
+                | |
+                +-+
+    Internet multiplayer
+    single board
+
+Potential features:
+    player nicknames.
